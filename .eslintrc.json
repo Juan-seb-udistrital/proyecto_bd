@@ -1,3 +1,11 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "./node_modules/standard/eslintrc.json",
+  "overrides": [
+    {
+      "files": ["*.jsx", "*.js"],
+      "rules": {
+        "import/no-absolute-path": "off"
+      }
+    }
+  ]
 }
