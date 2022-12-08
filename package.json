@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "fake-api": "json-server --watch data/db.json --port 3300"
   },
   "dependencies": {
     "eslint": "8.28.0",
@@ -16,6 +17,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "json-server": "^0.17.1",
     "standard": "^17.0.0"
   }
 }

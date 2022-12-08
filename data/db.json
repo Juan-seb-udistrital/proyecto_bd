@@ -1,0 +1,67 @@
+{
+  "allAirlines": ["American Airlines","Viva Colombia", "Aerolinea 2"],
+  "airlines":[
+    {
+      "id": "Chicago",
+      "airlines": [
+        "American Airlines","Viva Colombia", "Aerolinea 2"
+      ]
+    }
+  ],
+  "airports":[
+    {
+      "id": "Chicago",
+      "airports": [
+        "Aeropuerto 1", "Aeropuerto 2", "Aeropuerto 3"
+      ]
+    }
+  ],
+  "cities":[
+    {
+      "id": "Chicago",
+      "cities": [
+        "American Airlines","Viva Colombia", "Aerolinea 2"
+      ]
+    },
+    {
+      "id": "allCities",
+      "cities": [
+        "Chicago", "New Yorl", "Viva Colombia"
+      ]
+    }
+  ],
+  "flight":[
+    {
+      "id": "AA542",
+      "airline": "Colombia airlines"
+    }
+  ],
+  "itinerary":[
+    
+  ],
+  "pilots": [
+    {
+      "id": "AmericanAirlines",
+      "pilots": ["Piloto 1", "Piloto 2", "Piloto 3", "Piloto 4"]
+    }
+  ],
+  "codes": [
+    {
+      "id": "AmericanAirlines",
+      "flightCodes": [
+        {
+          "pilot": "Piloto 1",
+          "code": "code 1"
+        },
+        {
+          "pilot": "Piloto 2",
+          "code": "code 2"
+        },
+        {
+          "pilot": "Piloto 3",
+          "code": "code 3"
+        }
+      ]
+    }
+  ]
+}

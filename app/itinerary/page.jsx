@@ -1,4 +1,4 @@
-const fetcher = () => fetch('url').then(res => res.json())
+const fetcher = () => fetch('http://localhost:3300/itinerary').then(res => res.json())
 
 const ItineraryPage = async () => {
   const allFlightsInfo = await fetcher()

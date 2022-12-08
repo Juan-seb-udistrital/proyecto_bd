@@ -1,6 +1,6 @@
 'use client'
 
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 const OptionFlight = ({ flights }) => {
@@ -12,18 +12,25 @@ const OptionFlight = ({ flights }) => {
   }
 
   const handleClick = () => {
-    router.replace(`/${flight}`)
+    console.log('ruta')
+    router.replace(`/route/${flight}`)
   }
 
   return (
     <section>
-      <select name='select_flight' onChange={handleChange}>
-        {
-          flights.map(flight => (
-            <option key={flight} value={flight}>{flight}</option>
+      <label>
+        <span>
+          Escoge el vuelo:
+        </span>
+        <select name='select_flight' onChange={handleChange}>
+          <option value='' />
+          {
+          flights?.map(flight => (
+            <option key={flight.id} value={flight.id}>{flight.id}</option>
           ))
         }
-      </select>
+        </select>
+      </label>
       <button onClick={handleClick}>
         Consultar ruta de vuelo
       </button>
