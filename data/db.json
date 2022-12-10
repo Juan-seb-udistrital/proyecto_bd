@@ -1,67 +1,123 @@
 {
-  "allAirlines": ["American Airlines","Viva Colombia", "Aerolinea 2"],
-  "airlines":[
+  "allAirports": {
+    "data": [
+      {
+        "CODE": "JJC",
+        "NOMBRE": "Aeropuerto nacional JorgeCantu"
+      },
+      {
+        "CODE": "CSL",
+        "NOMBRE": "Aeropuerto inter. CaboSanLucas"
+      }
+    ]
+  },
+  "allCities": [
+    {
+      "city": "Chicago",
+      "country": "United States",
+      "state": "Illinois"
+    },
+    {
+      "city": "Toronto",
+      "country": "Canada",
+      "province": "Quebec"
+    },
+    {
+      "city": "Bogota",
+      "country": "Colombia",
+      "departmento": "Bogota"
+    }
+  ],
+  "airlines": [
     {
       "id": "Chicago",
       "airlines": [
-        "American Airlines","Viva Colombia", "Aerolinea 2"
+        "American Airlines",
+        "Viva Colombia",
+        "Aerolinea 2"
       ]
     }
   ],
-  "airports":[
+  "airports": [
     {
       "id": "Chicago",
       "airports": [
-        "Aeropuerto 1", "Aeropuerto 2", "Aeropuerto 3"
+        "Aeropuerto inter. CaboSanLucas",
+        "Aeropuerto 2",
+        "Aeropuerto 3"
       ]
     }
   ],
-  "cities":[
+  "flight": [
     {
-      "id": "Chicago",
-      "cities": [
-        "American Airlines","Viva Colombia", "Aerolinea 2"
-      ]
-    },
-    {
-      "id": "allCities",
-      "cities": [
-        "Chicago", "New Yorl", "Viva Colombia"
-      ]
+      "id": "VA367",
+      "country": "Canada",
+      "flight": "VA367",
+      "airport": "Aeropuerto inter. CaboSanLucas",
+      "city": "Toronto",
+      "airline": "Viva Airlines",
+      "pilot": "Piloto 1",
+      "date": "1670976000000",
+      "provincia": "Quebec"
     }
   ],
-  "flight":[
-    {
-      "id": "AA542",
-      "airline": "Colombia airlines"
-    }
-  ],
-  "itinerary":[
-    
-  ],
+  "itinerary": [],
   "pilots": [
     {
       "id": "AmericanAirlines",
-      "pilots": ["Piloto 1", "Piloto 2", "Piloto 3", "Piloto 4"]
+      "pilots": [
+        "Piloto 1",
+        "Piloto 2",
+        "Piloto 3",
+        "Piloto 4"
+      ]
     }
   ],
   "codes": [
     {
-      "id": "AmericanAirlines",
-      "flightCodes": [
+      "id": "CSL",
+      "data": [
         {
-          "pilot": "Piloto 1",
-          "code": "code 1"
+          "airline": "Viva Airlines",
+          "flight_code": "VA367",
+          "pilot": "Piloto 1"
         },
         {
-          "pilot": "Piloto 2",
-          "code": "code 2"
+          "airline": "American Airlines",
+          "flight_code": "AA451",
+          "pilot": "Piloto 2"
         },
         {
-          "pilot": "Piloto 3",
-          "code": "code 3"
+          "airline": "Viva Colombia",
+          "flight_code": "VC321",
+          "pilot": "Piloto 3"
+        },
+        {
+          "airline": "American Airlines",
+          "flight_code": "AA514",
+          "pilot": "Piloto 4"
         }
       ]
+    }
+  ],
+  "infostate": [
+    {
+      "city": "Chicago",
+      "airports": [
+        "Aeropuerto de Chicago 1",
+        "Aeropuerto de Chicago 2"
+      ],
+      "country": "United States",
+      "state": "Illinois"
+    },
+    {
+      "city": "Toronto",
+      "airports": [
+        "Aeropuerto inter. CaboSanLucas",
+        "Aeropuerto de Toronto 2"
+      ],
+      "country": "Canada",
+      "provincia": "Quebec"
     }
   ]
 }

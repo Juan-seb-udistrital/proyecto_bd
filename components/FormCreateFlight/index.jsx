@@ -1,15 +1,18 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { ROUTE_STATES } from '/helpers/route_states.js'
 
 const flight = {
   airline: '',
   city: '',
   airport: '',
-  pilot: ''
+  pilot: '',
+  code: '',
+  date: ''
 }
 
-const FormCreateFlight = ({ cities }) => {
+const FormCreateFlight = ({ infoCities, setDataOfFlight, setRouteArray, setEditableData }) => {
   const [dataFlight, setDataFlight] = useState(flight)
   const [airlines, setAirlines] = useState(null)
   const [airports, setAirports] = useState(null)
@@ -26,6 +29,7 @@ const FormCreateFlight = ({ cities }) => {
 
         setAirlines(jsonAirline.airlines)
         setAirports(jsonAirport.airports)
+        console.log(airlines, airports)
       } catch (error) {
         console.log(error)
       }
@@ -49,14 +53,51 @@ const FormCreateFlight = ({ cities }) => {
     getPilots()
   }, [dataFlight.airline])
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-  }
-
   const handleChange = (e) => {
     setDataFlight({
       ...dataFlight,
       [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const [division, place] = Object.entries(infoCities.find(infoCity => infoCity.city === dataFlight.city)).pop()
+    const { country } = infoCities.find(infoCity => infoCity.city === dataFlight.city)
+    const flight = dataFlight.airline.split(' ').map(word => word.charAt(0)).join('').toUpperCase() + dataFlight.code
+    const { airline, city, airport, pilot, date } = dataFlight
+
+    setDataOfFlight([
+      {
+        country,
+        flight,
+        airport,
+        city,
+        airline,
+        pilot,
+        date: new Date(date.replace('T', ' ')).getTime(),
+        [division]: place
+      },
+      {
+        flight,
+        airline,
+        airport: '',
+        city: '',
+        country: '',
+        date: '',
+        pilot
+      }
+    ])
+    setRouteArray([ROUTE_STATES.SEGMENT])
+    setEditableData({
+      flight,
+      airline,
+      airport: '',
+      city: '',
+      country: '',
+      date: '',
+      pilot
     })
   }
 
@@ -66,7 +107,7 @@ const FormCreateFlight = ({ cities }) => {
         <span>Ciudad:</span>
         <select name='city' onChange={handleChange}>
           {
-            cities?.map(city => (
+            infoCities?.map(({ city }) => (
               <option key={city} value={city}>{city}</option>
             ))
           }
@@ -116,6 +157,18 @@ const FormCreateFlight = ({ cities }) => {
             )
           }
         </select>
+      </label>
+      <label>
+        <span>
+          Codigo de vuelo:
+        </span>
+        <input type='text' name='code' pattern='[0-9]{3}' title='Codigo de 3 numeros' onChange={handleChange} />
+      </label>
+      <label>
+        <span>
+          Hora y fecha de vuelo:
+        </span>
+        <input type='datetime-local' name='date' onChange={handleChange} />
       </label>
       <input type='submit' value='Generar vuelo' />
     </form>
