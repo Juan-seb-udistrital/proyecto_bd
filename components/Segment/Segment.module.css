@@ -1,0 +1,79 @@
+.container{
+  max-width: 500px;
+  border: 1px solid rgb(63, 60, 60);
+  border-radius: 6px;
+}
+
+.segment {
+  display: flex;
+  max-width: 800px;
+}
+
+.title {
+  font-weight: 600;
+  text-align: center;
+  padding: .5rem 0;
+  background-color: rgb(63, 60, 60);
+  color: #fff;
+}
+
+.segment_info {
+  width: 50%;
+  padding: .5rem 1rem;
+}
+
+.segment_info p{
+  padding: .2rem 0;
+  width: max-content;
+  width: 100%;
+}
+
+.segment_info p>span {
+  font-weight: 600;
+  padding: .2rem 0;
+}
+
+
+.segment_info:first-child {
+  border-right: 1px solid grey;
+}
+
+.edit_info_segment{
+  display: flex;
+  flex-direction: column;
+}
+
+.input_edit {
+  padding: .1rem 0;
+}
+
+.input_edit>span{
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.input_select, .input_date {
+  width: 150px;
+  width: 100%;
+  outline: none;
+  padding: .4rem .2rem;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 16px;
+}
+
+.container_button{
+  margin: .5rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.button{
+  border-radius: 8px;
+  border: 1px solid rgb(63, 60, 60);
+  padding: .3rem .5rem;
+  width: max-content;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen;
+  font-size: 16px;
+}

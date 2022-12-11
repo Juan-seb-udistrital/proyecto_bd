@@ -6,6 +6,8 @@ specifiers:
   json-server: ^0.17.1
   next: 13.0.5
   react: 18.2.0
+  react-collapsed: ^3.6.0
+  react-datalist-input: ^3.2.1
   react-dom: 18.2.0
   standard: ^17.0.0
 
@@ -14,6 +16,8 @@ dependencies:
   eslint-config-next: 13.0.5_eslint@8.28.0
   next: 13.0.5_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
+  react-collapsed: 3.6.0_biqbaboplfbrettd7655fr4n2y
+  react-datalist-input: 3.2.1_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
 
 devDependencies:
@@ -2194,6 +2198,27 @@ packages:
       unpipe: 1.0.0
     dev: true
 
+  /react-collapsed/3.6.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-QqtogOGl5hM9L7j7rlMCYxm4jD8Ovr8voqyYS1g5ltADhUNvxbbgtJ5MwRiajJ0DmYFOZHShpnSPz4wvJaOiKA==}
+    peerDependencies:
+      react: ^16.8 || ^17
+      react-dom: ^16.8 || ^17
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      tiny-warning: 1.0.3
+    dev: false
+
+  /react-datalist-input/3.2.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-5aJu+DG7/j9TwKmNIU6fizr6t03N2esu/A+Zdv1gRCUgWCkrBueYeC4TEGbKNgSEMk/66lXtQXp3qEDRdl7lVg==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
   /react-dom/18.2.0_react@18.2.0:
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}
     peerDependencies:
@@ -2521,6 +2546,10 @@ packages:
     dependencies:
       globalyzer: 0.1.0
       globrex: 0.1.2
+    dev: false
+
+  /tiny-warning/1.0.3:
+    resolution: {integrity: sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==}
     dev: false
 
   /to-regex-range/5.0.1:

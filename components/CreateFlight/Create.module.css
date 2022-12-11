@@ -1,0 +1,13 @@
+.main{
+  padding: 0 5rem;
+}
+
+.container_create{
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+.container_segments{
+  display: flex;
+}

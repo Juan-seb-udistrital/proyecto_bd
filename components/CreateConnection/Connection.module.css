@@ -1,0 +1,56 @@
+.form {
+  padding: .5rem 1rem;
+  max-width: 300px;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  width: 100%;
+  font-weight: 600;
+  margin-bottom: .5rem;
+  font-size: 18px;
+}
+
+.form_field {
+  width: 100%;
+  margin-bottom: .5rem;
+}
+
+.form_field span {
+  font-weight: 600;
+}
+
+.form_select,
+.form_date,
+.form_input {
+  margin-top: .2rem;
+  width: 100%;
+  padding: .3rem .2rem;
+  outline: none;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 16px;
+}
+
+.pilot_p span{
+  font-weight: 600;
+}
+
+.container_button{
+  margin: .5rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.button{
+  border-radius: 8px;
+  border: 1px solid rgb(63, 60, 60);
+  padding: .3rem .5rem;
+  width: max-content;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen;
+  font-size: 16px;
+}

@@ -3,6 +3,7 @@
 import { ROUTE_STATES } from '/helpers/route_states.js'
 import Segment from '/components/Segment'
 import SegmentWithData from 'components/SegmentWithData'
+import styles from './CreateSeg.module.css'
 
 const CreateSegments = ({ dataOfFlight, setDataOfFlight, routeArray, setRouteArray, editableData }) => {
   const handleClickNewSegment = () => {
@@ -11,11 +12,11 @@ const CreateSegments = ({ dataOfFlight, setDataOfFlight, routeArray, setRouteArr
   }
 
   return (
-    <section>
-      <div>
+    <section className={styles.container}>
+      <div className={styles.title}>
         Itinerario del vuelo
       </div>
-      <section>
+      <section className={styles.container_segments}>
         {
           routeArray?.map((route, index) => {
             if (route === ROUTE_STATES.SEGMENT) {
@@ -47,9 +48,11 @@ const CreateSegments = ({ dataOfFlight, setDataOfFlight, routeArray, setRouteArr
           })
         }
       </section>
-      <button onClick={handleClickNewSegment}>
-        Crear nuevo segmento
-      </button>
+      <div className={styles.container_button}>
+        <button className={styles.button} onClick={handleClickNewSegment}>
+          Crear nuevo segmento
+        </button>
+      </div>
     </section>
   )
 }

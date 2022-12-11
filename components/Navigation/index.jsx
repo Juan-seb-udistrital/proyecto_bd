@@ -11,10 +11,6 @@ const routes = [
     label: 'Crear vuelos'
   },
   {
-    path: '/route',
-    label: 'Ruta de vuelo'
-  },
-  {
     path: '/itinerary',
     label: 'Itinerario'
   }
@@ -22,11 +18,11 @@ const routes = [
 
 const Navigation = () => {
   return (
-    <header className=''>
-      <nav>
+    <header className={styles.header}>
+      <nav className={styles.nav}>
         {
           routes.map(route => (
-            <Link href={route.path} key={route.path}>
+            <Link className={styles.link} href={route.path} key={route.path}>
               {route.label}
             </Link>
           ))

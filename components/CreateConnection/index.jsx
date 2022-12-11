@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { ROUTE_STATES } from '/helpers/route_states.js'
+import styles from './Connection.module.css'
 
 const connection = {
   airport: '',
@@ -10,27 +11,12 @@ const connection = {
   pilot: ''
 }
 
-const CreateConnection = ({ dataOfFlight, setDataOfFlight, routeArray, setRouteArray }) => {
+const CreateConnection = ({ codeCity, dataOfFlight, setDataOfFlight, routeArray, setRouteArray }) => {
   const [dataConnection, setDataConnection] = useState(connection)
   const [airports, setAirports] = useState(null)
   const [infoFlight, setInfoFlight] = useState(null)
   const [airlines, setAirlines] = useState(null)
   const [codesFlight, setCodesFlight] = useState(null)
-
-  useEffect(() => {
-    const getAirlines = async () => {
-      try {
-        const res = await fetch('http://localhost:3300/allAirports')
-        const json = await res.json()
-
-        setAirports(json)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    getAirlines()
-  }, [])
 
   useEffect(() => {
     const getFlightCodes = async () => {
@@ -50,6 +36,27 @@ const CreateConnection = ({ dataOfFlight, setDataOfFlight, routeArray, setRouteA
 
     getFlightCodes()
   }, [dataConnection.airport])
+
+  useEffect(() => {
+    if (!codeCity) return
+
+    const getAirports = async () => {
+      try {
+        const resAirline = await fetch(`http://localhost:3300/aerolineas/${codeCity}`)
+        const jsonAirline = await resAirline.json()
+
+        const resAirport = await fetch(`http://localhost:3300/aeropuertos/${codeCity}`)
+        const jsonAirport = await resAirport.json()
+
+        setAirlines(jsonAirline.data)
+        setAirports(jsonAirport.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    getAirports()
+  }, [codeCity])
 
   const handleChange = (e) => {
     setDataConnection({
@@ -107,10 +114,11 @@ const CreateConnection = ({ dataOfFlight, setDataOfFlight, routeArray, setRouteA
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
+    <form onSubmit={handleSubmit} className={styles.form}>
+      <p className={styles.title}>Crear conexión</p>
+      <label className={styles.form_field}>
         <span>Escoge destino final:</span>
-        <select name='airport' onChange={handleChange}>
+        <select name='airport' className={styles.form_select} onChange={handleChange}>
           <option value='' />
           {
             airports?.data.map(({ CODE, NOMBRE }) => (
@@ -118,10 +126,11 @@ const CreateConnection = ({ dataOfFlight, setDataOfFlight, routeArray, setRouteA
             ))
           }
         </select>
+
       </label>
-      <label>
+      <label className={styles.form_field}>
         <span>Escoge aerolinea:</span>
-        <select name='airline' onChange={handleChangeAirline}>
+        <select name='airline' className={styles.form_select} onChange={handleChangeAirline}>
           <option value='' />
           {
             airlines?.map((airline) => (
@@ -131,9 +140,9 @@ const CreateConnection = ({ dataOfFlight, setDataOfFlight, routeArray, setRouteA
         </select>
       </label>
 
-      <label>
+      <label className={styles.form_field}>
         <span>Escoge codigo:</span>
-        <select name='flight_code' onChange={handleChangeCode}>
+        <select name='flight_code' className={styles.form_select} onChange={handleChangeCode}>
           <option value='' />
           {
             codesFlight?.map(code => (
@@ -142,8 +151,10 @@ const CreateConnection = ({ dataOfFlight, setDataOfFlight, routeArray, setRouteA
           }
         </select>
       </label>
-      <p>Piloto del vuelo: <span>{dataConnection.pilot}</span></p>
-      <input type='submit' value='Crear conexión' />
+      <p className={styles.pilot_p}><span>Piloto del vuelo:</span> {dataConnection.pilot}</p>
+      <div className={styles.container_button}>
+        <input type='submit' value='Crear conexión' className={styles.button} />
+      </div>
     </form>
   )
 }

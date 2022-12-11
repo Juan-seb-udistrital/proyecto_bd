@@ -1,12 +1,12 @@
-const fetcher = () => fetch('http://localhost:3300/itinerary').then(res => res.json())
+import Itinerary from '/components/Itinerary'
+
+const fetcher = () => fetch('http://localhost:3300/airports').then(res => res.json())
 
 const ItineraryPage = async () => {
-  const allFlightsInfo = await fetcher()
+  const allAirports = await fetcher()
 
   return (
-    <main>
-      Este es el main de itinerary
-    </main>
+    <Itinerary airports={allAirports.data} />
   )
 }
 

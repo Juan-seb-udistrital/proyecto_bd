@@ -28,23 +28,41 @@
       "departmento": "Bogota"
     }
   ],
-  "airlines": [
+  "aerolineas": [
     {
-      "id": "Chicago",
-      "airlines": [
-        "American Airlines",
-        "Viva Colombia",
-        "Aerolinea 2"
+      "id": "7",
+      "data": [
+        {
+          "CODE": "DL",
+          "NOMBRE": "Delta Air Lines"
+        },
+        {
+          "CODE": "XP",
+          "NOMBRE": "Avelo Airlines"
+        },
+        {
+          "CODE": "AA",
+          "NOMBRE": "American Airlines"
+        },
+        {
+          "CODE": "MX",
+          "NOMBRE": "Breeze Airways"
+        }
       ]
     }
   ],
-  "airports": [
+  "aeropuertos": [
     {
-      "id": "Chicago",
-      "airports": [
-        "Aeropuerto inter. CaboSanLucas",
-        "Aeropuerto 2",
-        "Aeropuerto 3"
+      "id": "7",
+      "data": [
+        {
+          "CODE": "JJC",
+          "NOMBRE": "Aeropuerto nacional JorgeCantu"
+        },
+        {
+          "CODE": "CSL",
+          "NOMBRE": "Aeropuerto inter. CaboSanLucas"
+        }
       ]
     }
   ],
@@ -57,19 +75,23 @@
       "city": "Toronto",
       "airline": "Viva Airlines",
       "pilot": "Piloto 1",
-      "date": "1670976000000",
+      "date": 1670976000000,
       "provincia": "Quebec"
     }
   ],
   "itinerary": [],
-  "pilots": [
+  "pilotos": [
     {
-      "id": "AmericanAirlines",
-      "pilots": [
-        "Piloto 1",
-        "Piloto 2",
-        "Piloto 3",
-        "Piloto 4"
+      "id": "AA",
+      "data": [
+        {
+          "LICENCIA": 1,
+          "NOMBRE": "David Ravelo"
+        },
+        {
+          "LICENCIA": 2,
+          "NOMBRE": "Juan Angulo"
+        }
       ]
     }
   ],
@@ -119,5 +141,757 @@
       "country": "Canada",
       "provincia": "Quebec"
     }
-  ]
+  ],
+  "ciudades": {
+    "data": [
+      {
+        "ciudad": {
+          "ID": 7,
+          "NOMBRE": "Toronto",
+          "SIG": 1,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 1,
+          "NOMBRE": "Canada",
+          "SIG": null,
+          "TIPO": "pais"
+        },
+        "pais": {
+          "ID": 3,
+          "NOMBRE": "Canada",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 8,
+          "NOMBRE": "Montreal",
+          "SIG": 1,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 1,
+          "NOMBRE": "Canada",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 9,
+          "NOMBRE": "Vancouver",
+          "SIG": 1,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 1,
+          "NOMBRE": "Canada",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 10,
+          "NOMBRE": "Calgary",
+          "SIG": 1,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 1,
+          "NOMBRE": "Canada",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 11,
+          "NOMBRE": "Edmonton",
+          "SIG": 1,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 1,
+          "NOMBRE": "Canada",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 12,
+          "NOMBRE": "Qubec",
+          "SIG": 1,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 1,
+          "NOMBRE": "Canada",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 13,
+          "NOMBRE": "Atlanta",
+          "SIG": 2,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 2,
+          "NOMBRE": "Estados Unidos",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 14,
+          "NOMBRE": "Los Angeles",
+          "SIG": 2,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 2,
+          "NOMBRE": "Estados Unidos",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 15,
+          "NOMBRE": "Chicago",
+          "SIG": 2,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 2,
+          "NOMBRE": "Estados Unidos",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 16,
+          "NOMBRE": "Denver",
+          "SIG": 2,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 2,
+          "NOMBRE": "Estados Unidos",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 17,
+          "NOMBRE": "Nueva York",
+          "SIG": 2,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 2,
+          "NOMBRE": "Estados Unidos",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 18,
+          "NOMBRE": "San Francisco",
+          "SIG": 2,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 2,
+          "NOMBRE": "Estados Unidos",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 19,
+          "NOMBRE": "Seattle",
+          "SIG": 2,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 2,
+          "NOMBRE": "Estados Unidos",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 20,
+          "NOMBRE": "Las vegas",
+          "SIG": 2,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 2,
+          "NOMBRE": "Estados Unidos",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 21,
+          "NOMBRE": "Orlando",
+          "SIG": 2,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 2,
+          "NOMBRE": "Estados Unidos",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 22,
+          "NOMBRE": "Newark",
+          "SIG": 2,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 2,
+          "NOMBRE": "Estados Unidos",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 23,
+          "NOMBRE": "Acapulco",
+          "SIG": 3,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 3,
+          "NOMBRE": "Mexico",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 24,
+          "NOMBRE": "Aguascalientes",
+          "SIG": 3,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 3,
+          "NOMBRE": "Mexico",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 25,
+          "NOMBRE": "Alamos",
+          "SIG": 3,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 3,
+          "NOMBRE": "Mexico",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 26,
+          "NOMBRE": "Apatzingan",
+          "SIG": 3,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 3,
+          "NOMBRE": "Mexico",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 27,
+          "NOMBRE": "Atizapan",
+          "SIG": 3,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 3,
+          "NOMBRE": "Mexico",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 28,
+          "NOMBRE": "Cabo San Lucas",
+          "SIG": 3,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 3,
+          "NOMBRE": "Mexico",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 29,
+          "NOMBRE": "Campeche",
+          "SIG": 3,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 3,
+          "NOMBRE": "Mexico",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 30,
+          "NOMBRE": "Canea",
+          "SIG": 3,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 3,
+          "NOMBRE": "Mexico",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 31,
+          "NOMBRE": "Cancun",
+          "SIG": 3,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 3,
+          "NOMBRE": "Mexico",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 32,
+          "NOMBRE": "Celaya",
+          "SIG": 3,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 3,
+          "NOMBRE": "Mexico",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 33,
+          "NOMBRE": "Chetumal",
+          "SIG": 3,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 3,
+          "NOMBRE": "Mexico",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 34,
+          "NOMBRE": "Buenos Aires",
+          "SIG": 4,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 4,
+          "NOMBRE": "Argentina",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 35,
+          "NOMBRE": "Cordoba",
+          "SIG": 4,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 4,
+          "NOMBRE": "Argentina",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 37,
+          "NOMBRE": "Rosario",
+          "SIG": 4,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 4,
+          "NOMBRE": "Argentina",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 38,
+          "NOMBRE": "Mendoza",
+          "SIG": 4,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 4,
+          "NOMBRE": "Argentina",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 39,
+          "NOMBRE": "Salta",
+          "SIG": 4,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 4,
+          "NOMBRE": "Argentina",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 40,
+          "NOMBRE": "Barcelona",
+          "SIG": 5,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 5,
+          "NOMBRE": "Espa��a",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 41,
+          "NOMBRE": "Madrid",
+          "SIG": 5,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 5,
+          "NOMBRE": "Espa��a",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 42,
+          "NOMBRE": "Mialaga",
+          "SIG": 5,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 5,
+          "NOMBRE": "Espa��a",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 43,
+          "NOMBRE": "Palma de Mallorca",
+          "SIG": 5,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 5,
+          "NOMBRE": "Espa��a",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 44,
+          "NOMBRE": "Alicante",
+          "SIG": 5,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 5,
+          "NOMBRE": "Espa��a",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 45,
+          "NOMBRE": "Valencia",
+          "SIG": 5,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 5,
+          "NOMBRE": "Espa��a",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 46,
+          "NOMBRE": "Sevilla",
+          "SIG": 5,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 5,
+          "NOMBRE": "Espa��a",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 47,
+          "NOMBRE": "La Tebaida",
+          "SIG": 6,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 6,
+          "NOMBRE": "Colombia",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 48,
+          "NOMBRE": "Soledad",
+          "SIG": 6,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 6,
+          "NOMBRE": "Colombia",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 49,
+          "NOMBRE": "Bogota",
+          "SIG": 6,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 6,
+          "NOMBRE": "Colombia",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 50,
+          "NOMBRE": "Lebrija",
+          "SIG": 6,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 6,
+          "NOMBRE": "Colombia",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 51,
+          "NOMBRE": "Palmira",
+          "SIG": 6,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 6,
+          "NOMBRE": "Colombia",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 52,
+          "NOMBRE": "Cartagena",
+          "SIG": 6,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 6,
+          "NOMBRE": "Colombia",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 53,
+          "NOMBRE": "Cucuta",
+          "SIG": 6,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 6,
+          "NOMBRE": "Colombia",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 54,
+          "NOMBRE": "Leticia",
+          "SIG": 6,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 6,
+          "NOMBRE": "Colombia",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 55,
+          "NOMBRE": "Rionegro",
+          "SIG": 6,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 6,
+          "NOMBRE": "Colombia",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 56,
+          "NOMBRE": "Pereira",
+          "SIG": 6,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 6,
+          "NOMBRE": "Colombia",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 57,
+          "NOMBRE": "Riohacha",
+          "SIG": 6,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 6,
+          "NOMBRE": "Colombia",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 58,
+          "NOMBRE": "San Andres",
+          "SIG": 6,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 6,
+          "NOMBRE": "Colombia",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 59,
+          "NOMBRE": "Santa Marta",
+          "SIG": 6,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 6,
+          "NOMBRE": "Colombia",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      },
+      {
+        "ciudad": {
+          "ID": 60,
+          "NOMBRE": "Dallas",
+          "SIG": 2,
+          "TIPO": "ciudad"
+        },
+        "division": {
+          "ID": 2,
+          "NOMBRE": "Estados Unidos",
+          "SIG": null,
+          "TIPO": "pais"
+        }
+      }
+    ]
+  }
 }

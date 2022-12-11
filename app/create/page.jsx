@@ -1,14 +1,12 @@
 import CreateFlight from '/components/CreateFlight'
 
-const fetcher = () => fetch('http://localhost:3300/allCities').then(res => res.json())
+const fetcher = () => fetch('http://localhost:3300/ciudades').then(res => res.json())
 
 const CreatePage = async () => {
   const infoCities = await fetcher()
-  console.log(infoCities)
+
   return (
-    <main>
-      <CreateFlight infoCities={infoCities} />
-    </main>
+    <CreateFlight infoCities={infoCities.data} />
   )
 }
 

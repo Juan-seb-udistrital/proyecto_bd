@@ -1,0 +1,26 @@
+.segment {
+  display: flex;
+}
+
+.title {
+  font-weight: 600;
+  text-align: center;
+  padding: .5rem 0;
+}
+
+.segment_info {
+  flex-grow: 1;
+  padding: .5rem 1rem;
+}
+
+.segment_info>p>span {
+  font-weight: 600;
+  padding: .2rem 0;
+}
+
+
+.segment_info:first-child {
+  border-right: 1px solid grey;
+}
+
+

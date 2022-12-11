@@ -1,27 +1,29 @@
+import styles from './Segment.module.css'
+
 const SegmentWithData = ({ index, route, dataSegmentOne, dataSegmentTwo }) => {
   return (
     <article>
-      <p>{route}</p>
-      <div>
-        <div>
-          <p>Vuelo: {dataSegmentOne.flight}</p>
-          <p>Aerolinea: {dataSegmentOne.airline}</p>
-          <p>Fecha: {new Date(dataSegmentOne.date).toDateString()}</p>
-          <p>Hora: {new Date(dataSegmentOne.date).toLocaleTimeString()}</p>
-          <p>Ciudad: {dataSegmentOne.city}</p>
-          <p>Aeropuerto: {dataSegmentOne.airport}</p>
-          <p>{Object.keys(dataSegmentOne).push()}: {Object.values(dataSegmentOne).push()}</p>
-          <p>Piloto: {dataSegmentOne.pilot}</p>
+      <p className={styles.title}>{route}</p>
+      <div className={styles.segment}>
+        <div className={styles.segment_info}>
+          <p><span>Vuelo:</span> {dataSegmentOne.flight}</p>
+          <p><span>Aerolinea:</span> {dataSegmentOne.airline}</p>
+          <p><span>Fecha:</span> {new Date(dataSegmentOne.date).toDateString()}</p>
+          <p><span>Hora:</span> {new Date(dataSegmentOne.date).toLocaleTimeString()}</p>
+          <p><span>Ciudad:</span> {dataSegmentOne.city}</p>
+          <p><span>Aeropuerto:</span> {dataSegmentOne.airport}</p>
+          <p><span>{Object.keys(dataSegmentOne).push()}:</span> {Object.values(dataSegmentOne).push()}</p>
+          <p><span>Piloto:</span> {dataSegmentOne.pilot}</p>
         </div>
-        <div>
-          <p>Vuelo: {dataSegmentTwo.flight}</p>
-          <p>Aerolinea: {dataSegmentTwo.airline}</p>
-          <p>Fecha: {new Date(dataSegmentTwo.date).toDateString()}</p>
-          <p>Hora: {new Date(dataSegmentTwo.date).toLocaleTimeString()}</p>
-          <p>Ciudad: {dataSegmentTwo.city}</p>
-          <p>Aeropuerto: {dataSegmentTwo.airport}</p>
-          <p>{Object.keys(dataSegmentTwo).pop()}: {Object.values(dataSegmentTwo).pop()}</p>
-          <p>Piloto: {dataSegmentTwo.pilot}</p>
+        <div className={styles.segment_info}>
+          <p><span>Vuelo:</span> {dataSegmentTwo.flight}</p>
+          <p><span>Aerolinea:</span> {dataSegmentTwo.airline}</p>
+          <p><span>Fecha:</span> {new Date(dataSegmentTwo.date).toDateString()}</p>
+          <p><span>Hora:</span> {new Date(dataSegmentTwo.date).toLocaleTimeString()}</p>
+          <p><span>Ciudad:</span> {dataSegmentTwo.city}</p>
+          <p><span>Aeropuerto:</span> {dataSegmentTwo.airport}</p>
+          <p><span>{Object.keys(dataSegmentTwo).pop()}:</span> {Object.values(dataSegmentTwo).pop()}</p>
+          <p><span>Piloto:</span> {dataSegmentTwo.pilot}</p>
         </div>
       </div>
     </article>
