@@ -17,6 +17,7 @@ const CreateFlight = ({ infoCities }) => {
       <article className={styles.container_create}>
         <FormCreateFlight
           infoCities={infoCities}
+          dataOfFlight={dataOfFlight}
           setDataOfFlight={setDataOfFlight}
           setRouteArray={setRouteArray}
           setEditableData={setEditableData}
@@ -33,6 +34,7 @@ const CreateFlight = ({ infoCities }) => {
         dataOfFlight &&
           <article>
             <CreateSegments
+              infoCities={infoCities}
               dataOfFlight={dataOfFlight}
               setDataOfFlight={setDataOfFlight}
               routeArray={routeArray}

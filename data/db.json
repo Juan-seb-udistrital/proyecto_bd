@@ -79,7 +79,42 @@
       "provincia": "Quebec"
     }
   ],
-  "itinerary": [],
+  "itinerary": {
+    "data": [
+      [
+        {
+          "AEREOLINEA": "Avelo Airlines",
+          "AEREOPUERTO": "Valencia airport",
+          "CIUDAD": "Valencia",
+          "CODAIRLINE": "XP",
+          "CODAIRPORT": "VLC",
+          "DESTINO": "Aeropuerto internacional Jose Maria Cordoba",
+          "DESTINOCODE": "MDE",
+          "DIVISION": "Valencia",
+          "FECHA": "Sat, 10 Dec 2022 19:54:00 GMT",
+          "PAIS": "Espa\ufffd\ufffda",
+          "PILOTO": "Juan Angulo",
+          "TIPO": "Comunidad",
+          "VUELO": "XP01"
+        },
+        {
+          "AEREOLINEA": "Avelo Airlines",
+          "AEREOPUERTO": "Aeropuerto internacional Jose Maria Cordoba",
+          "CIUDAD": "Rionegro",
+          "CODAIRLINE": "XP",
+          "CODAIRPORT": "MDE",
+          "DESTINO": "Aeropuerto internacional El Dorado",
+          "DESTINOCODE": "BOG",
+          "DIVISION": "Antioquia",
+          "FECHA": "Sat, 10 Dec 2022 19:54:00 GMT",
+          "PAIS": "Colombia",
+          "PILOTO": "Milena Encinales",
+          "TIPO": "Depto",
+          "VUELO": "XP01"
+        }
+      ]
+    ]
+  },
   "pilotos": [
     {
       "id": "AA",
@@ -95,29 +130,21 @@
       ]
     }
   ],
-  "codes": [
+  "getsegmentos": [
     {
       "id": "CSL",
       "data": [
         {
-          "airline": "Viva Airlines",
-          "flight_code": "VA367",
-          "pilot": "Piloto 1"
-        },
-        {
-          "airline": "American Airlines",
-          "flight_code": "AA451",
-          "pilot": "Piloto 2"
-        },
-        {
-          "airline": "Viva Colombia",
-          "flight_code": "VC321",
-          "pilot": "Piloto 3"
-        },
-        {
-          "airline": "American Airlines",
-          "flight_code": "AA514",
-          "pilot": "Piloto 4"
+          "AEREOLINEA": "Avelo Airlines",
+          "AEREOPUERTO": "Palma de Mallorca airport",
+          "CIUDAD": "Palma de Mallorca",
+          "CODAIRLINE": "XP",
+          "CODAIRPORT": "PMI",
+          "DIVISION": "España",
+          "FECHA": "Sat, 10 Dec 2022 19:54:00 GMT",
+          "PILOTO": "David Ravelo",
+          "TIPO": "pais",
+          "VUELO": "XP01"
         }
       ]
     }

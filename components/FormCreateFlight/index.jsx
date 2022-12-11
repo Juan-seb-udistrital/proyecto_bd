@@ -17,7 +17,7 @@ const flight = {
   date: ''
 }
 
-const FormCreateFlight = ({ infoCities, setDataOfFlight, setRouteArray, setEditableData }) => {
+const FormCreateFlight = ({ infoCities, dataOfFlight, setDataOfFlight, setRouteArray, setEditableData }) => {
   const [dataFlight, setDataFlight] = useState(flight)
   const [airlines, setAirlines] = useState(null)
   const [airports, setAirports] = useState(null)
@@ -111,8 +111,8 @@ const FormCreateFlight = ({ infoCities, setDataOfFlight, setRouteArray, setEdita
         ...dataFlight,
         flight,
         division: {
-          TIPO: division[0].division.TIPO,
-          NOMBRE: division[0].division.NOMBRE
+          type: division[0].division.TIPO,
+          name: division[0].division.NOMBRE
         },
         country: division[0].pais.NOMBRE,
         date: new Date(dataFlight.date.replace('T', ' ')).getTime()
@@ -124,8 +124,7 @@ const FormCreateFlight = ({ infoCities, setDataOfFlight, setRouteArray, setEdita
         city_code: null,
         airport: '',
         airport_code: '',
-        country: '',
-        date: ''
+        country: ''
       }
     ])
     setRouteArray([ROUTE_STATES.SEGMENT])
@@ -225,7 +224,7 @@ const FormCreateFlight = ({ infoCities, setDataOfFlight, setRouteArray, setEdita
         </span>
         <input type='datetime-local' name='date' onChange={handleChange} className={styles.form_date} />
       </label>
-      <input type='submit' value='Generar vuelo' className={styles.button} />
+      <input type='submit' value='Generar vuelo' className={styles.button} disabled={dataOfFlight} />
     </form>
   )
 }

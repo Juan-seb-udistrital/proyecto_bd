@@ -5,8 +5,8 @@ import { ROUTE_STATES } from '/helpers/route_states.js'
 import styles from './Connection.module.css'
 
 const connection = {
-  airport: '',
-  airline: '',
+  airport_code: '',
+  airline_code: '',
   flight_code: '',
   pilot: ''
 }
@@ -16,40 +16,18 @@ const CreateConnection = ({ codeCity, dataOfFlight, setDataOfFlight, routeArray,
   const [airports, setAirports] = useState(null)
   const [infoFlight, setInfoFlight] = useState(null)
   const [airlines, setAirlines] = useState(null)
-  const [codesFlight, setCodesFlight] = useState(null)
-
-  useEffect(() => {
-    const getFlightCodes = async () => {
-      try {
-        const res = await fetch(`http://localhost:3300/codes/${dataConnection.airport}`)
-        const json = await res.json()
-
-        /* const flightCodes = json.map(code => {code: code, number_flight:code.slice(2, 5)})
-        setFlightCodes(flightCodes) */
-
-        setInfoFlight(json)
-        setAirlines([...new Set(json.data.map(info => info.airline))])
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    getFlightCodes()
-  }, [dataConnection.airport])
+  const [allSegments, setAllSegments] = useState(null)
+  const [codes, setCodes] = useState(null)
 
   useEffect(() => {
     if (!codeCity) return
 
     const getAirports = async () => {
       try {
-        const resAirline = await fetch(`http://localhost:3300/aerolineas/${codeCity}`)
-        const jsonAirline = await resAirline.json()
+        const res = await fetch(`http://localhost:3300/aeropuertos/${codeCity}`)
+        const json = await res.json()
 
-        const resAirport = await fetch(`http://localhost:3300/aeropuertos/${codeCity}`)
-        const jsonAirport = await resAirport.json()
-
-        setAirlines(jsonAirline.data)
-        setAirports(jsonAirport.data)
+        setAirports(json.data)
       } catch (error) {
         console.log(error)
       }
@@ -58,40 +36,33 @@ const CreateConnection = ({ codeCity, dataOfFlight, setDataOfFlight, routeArray,
     getAirports()
   }, [codeCity])
 
+  useEffect(() => {
+    const getFlightCodes = async () => {
+      try {
+        const res = await fetch(`http://localhost:3300/getsegmentos/${dataConnection.airport_code}`)
+        const json = await res.json()
+
+        setAllSegments(json.data)
+        setAirlines([...new Set(json.data.map(segment => segment.AEREOLINEA))])
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    getFlightCodes()
+  }, [dataConnection.airport_code])
+
+  useEffect(() => {
+    if (!allSegments) return
+    const flightCodes = allSegments?.filter(segment => segment.AEREOLINEA === dataConnection.airline_code).map(segment => segment.VUELO)
+
+    setCodes(flightCodes)
+  }, [dataConnection.airline_code])
+
   const handleChange = (e) => {
     setDataConnection({
       ...dataConnection,
       [e.target.name]: e.target.value
-    })
-  }
-
-  /* const handleChangeSelect = (e) => {
-    const flight = flightCodes.find(element => element.code === e.target.value)
-
-    setDataConnection({
-      ...dataConnection,
-      pilot: flight.pilot,
-      flight_code: e.target.value
-    })
-  } */
-
-  const handleChangeAirline = (e) => {
-    const codes = infoFlight.data.filter(info => info.airline === e.target.value).map(info => info.flight_code)
-
-    setCodesFlight(codes)
-    setDataConnection({
-      ...dataConnection,
-      [e.target.name]: e.target.value
-    })
-  }
-
-  const handleChangeCode = (e) => {
-    const { pilot } = infoFlight.data.filter(info => info.flight_code === e.target.value)[0]
-
-    setDataConnection({
-      ...dataConnection,
-      [e.target.name]: e.target.value,
-      pilot
     })
   }
 
@@ -118,10 +89,10 @@ const CreateConnection = ({ codeCity, dataOfFlight, setDataOfFlight, routeArray,
       <p className={styles.title}>Crear conexión</p>
       <label className={styles.form_field}>
         <span>Escoge destino final:</span>
-        <select name='airport' className={styles.form_select} onChange={handleChange}>
+        <select name='airport_code' className={styles.form_select} onChange={handleChange}>
           <option value='' />
           {
-            airports?.data.map(({ CODE, NOMBRE }) => (
+            airports?.map(({ CODE, NOMBRE }) => (
               <option key={CODE} value={CODE}>{NOMBRE}</option>
             ))
           }
@@ -130,10 +101,10 @@ const CreateConnection = ({ codeCity, dataOfFlight, setDataOfFlight, routeArray,
       </label>
       <label className={styles.form_field}>
         <span>Escoge aerolinea:</span>
-        <select name='airline' className={styles.form_select} onChange={handleChangeAirline}>
+        <select name='airline_code' className={styles.form_select} onChange={handleChange}>
           <option value='' />
           {
-            airlines?.map((airline) => (
+            airlines?.map(airline => (
               <option key={airline} value={airline}>{airline}</option>
             ))
           }
@@ -142,10 +113,10 @@ const CreateConnection = ({ codeCity, dataOfFlight, setDataOfFlight, routeArray,
 
       <label className={styles.form_field}>
         <span>Escoge codigo:</span>
-        <select name='flight_code' className={styles.form_select} onChange={handleChangeCode}>
+        <select name='flight_code' className={styles.form_select} onChange={handleChange}>
           <option value='' />
           {
-            codesFlight?.map(code => (
+            codes?.map(code => (
               <option key={code} value={code}>{code}</option>
             ))
           }

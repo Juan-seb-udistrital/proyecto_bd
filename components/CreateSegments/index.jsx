@@ -5,10 +5,14 @@ import Segment from '/components/Segment'
 import SegmentWithData from 'components/SegmentWithData'
 import styles from './CreateSeg.module.css'
 
-const CreateSegments = ({ dataOfFlight, setDataOfFlight, routeArray, setRouteArray, editableData }) => {
+const CreateSegments = ({ infoCities, dataOfFlight, setDataOfFlight, routeArray, setRouteArray, editableData, setCodeCity }) => {
   const handleClickNewSegment = () => {
+    const data = [...dataOfFlight]
+
+    data[data.length - 1].date = ''
+
     setRouteArray([...routeArray, ROUTE_STATES.SEGMENT])
-    setDataOfFlight([...dataOfFlight, editableData])
+    setDataOfFlight([...data, editableData])
   }
 
   return (
@@ -26,6 +30,7 @@ const CreateSegments = ({ dataOfFlight, setDataOfFlight, routeArray, setRouteArr
                   key={route}
                   index={index}
                   route={route}
+                  infoCities={infoCities}
                   routeArray={routeArray}
                   editableData={editableData}
                   dataOfFlight={dataOfFlight}
@@ -33,6 +38,7 @@ const CreateSegments = ({ dataOfFlight, setDataOfFlight, routeArray, setRouteArr
                   dataSegmentTwo={dataOfFlight[index + 1]}
                   setDataOfFlight={setDataOfFlight}
                   setRouteArray={setRouteArray}
+                  setCodeCity={setCodeCity}
                 />
               )
             }

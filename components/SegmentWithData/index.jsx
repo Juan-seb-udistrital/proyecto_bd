@@ -12,7 +12,7 @@ const SegmentWithData = ({ index, route, dataSegmentOne, dataSegmentTwo }) => {
           <p><span>Hora:</span> {new Date(dataSegmentOne.date).toLocaleTimeString()}</p>
           <p><span>Ciudad:</span> {dataSegmentOne.city}</p>
           <p><span>Aeropuerto:</span> {dataSegmentOne.airport}</p>
-          <p><span>{Object.keys(dataSegmentOne).push()}:</span> {Object.values(dataSegmentOne).push()}</p>
+          <p><span>{dataSegmentOne.division.type}:</span> {dataSegmentOne.division.name}</p>
           <p><span>Piloto:</span> {dataSegmentOne.pilot}</p>
         </div>
         <div className={styles.segment_info}>
@@ -22,7 +22,7 @@ const SegmentWithData = ({ index, route, dataSegmentOne, dataSegmentTwo }) => {
           <p><span>Hora:</span> {new Date(dataSegmentTwo.date).toLocaleTimeString()}</p>
           <p><span>Ciudad:</span> {dataSegmentTwo.city}</p>
           <p><span>Aeropuerto:</span> {dataSegmentTwo.airport}</p>
-          <p><span>{Object.keys(dataSegmentTwo).pop()}:</span> {Object.values(dataSegmentTwo).pop()}</p>
+          <p><span>{dataSegmentTwo.division.type}:</span> {dataSegmentTwo.division.name}</p>
           <p><span>Piloto:</span> {dataSegmentTwo.pilot}</p>
         </div>
       </div>
